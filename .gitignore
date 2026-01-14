@@ -1,0 +1,7 @@
+nlpenv
+.ipynb_checkpoints
+llmenv
+config.py
+langchain_module_files
+my_saved_models
+future_improvements.md
