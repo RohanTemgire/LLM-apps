@@ -1,11 +1,11 @@
 import streamlit as st
 from google import genai
 from google.genai import types
-import config, os
+# import config, os
 from streamlit_js_eval import streamlit_js_eval 
 
 
-os.environ['GOOGLE_API_KEY'] = config.GEMINI_API_KEY
+# os.environ['GOOGLE_API_KEY'] = config.GEMINI_API_KEY
 
 client = genai.Client()
 
