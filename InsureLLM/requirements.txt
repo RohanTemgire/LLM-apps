@@ -3,7 +3,6 @@ langchain_chroma
 langchain_huggingface
 langchain_community
 plotly
-glob
 numpy
 google-generativeai
 sentence-transformers
