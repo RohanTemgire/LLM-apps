@@ -19,7 +19,7 @@ with st.sidebar:
     st.markdown(
         """
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <a href="https://github.com/RohanTemgire/LLM-apps" target="_blank" style="text-decoration: none;">
+            <a href="https://github.com/RohanTemgire/LLM-apps/tree/main/InsureLLM" target="_blank" style="text-decoration: none;">
                 <img src="https://img.shields.io/badge/GitHub-View_Source-181717?style=for-the-badge&logo=github&logoColor=white" alt="View on GitHub"/>
             </a>
         </div>
