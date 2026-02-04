@@ -1,4 +1,4 @@
-langchain_google_genai==1.0.10
+langchain_google_genai>=1.0.10
 langchain_chroma==0.2.6
 langchain_huggingface==0.1.2
 langchain_community==0.0.38
@@ -6,8 +6,8 @@ langchain_community==0.0.38
 plotly==5.18.0
 numpy>=1.24,<2.0
 
-google-generativeai==0.3.2
-google-genai==0.3.0
+google-generativeai>=0.7.0
+google-genai>=0.3.0
 
 sentence-transformers==2.6.1
 litellm==1.30.3
