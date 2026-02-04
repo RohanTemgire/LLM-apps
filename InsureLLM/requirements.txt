@@ -1,5 +1,5 @@
 langchain_google_genai==1.0.10
-langchain_chroma==0.4.4
+langchain_chroma==0.2.6
 langchain_huggingface==0.1.2
 langchain_community==0.0.38
 
