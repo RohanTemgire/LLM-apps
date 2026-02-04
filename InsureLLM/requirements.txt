@@ -1,0 +1,13 @@
+langchain_google_genai
+langchain_chroma 
+langchain_huggingface
+langchain_community
+plotly
+tiktoken
+glob
+numpy
+google-generativeai
+sentence-transformers
+litellm
+google-genai
+tenacity
