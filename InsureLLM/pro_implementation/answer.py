@@ -6,9 +6,9 @@ from tenacity import retry, wait_exponential
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from google import genai
 
-import config, os
+# import config, os
 
-os.environ['GEMINI_API_KEY'] = config.GEMINI_API_KEY
+# os.environ['GEMINI_API_KEY'] = config.GEMINI_API_KEY
 
 MODEL = "gemini/gemini-2.5-flash"
 DB_NAME = str(Path(__file__).parent.parent / "preprocessed_db")

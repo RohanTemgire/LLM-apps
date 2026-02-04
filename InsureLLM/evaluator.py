@@ -1,11 +1,11 @@
 import gradio as gr
 import pandas as pd
 from collections import defaultdict
-import config, os
+# import config, os
 
 from evaluations.eval import evaluate_all_retrieval, evaluate_all_answers
 
-os.environ['GEMINI_API_KEY'] = config.GEMINI_API_KEY
+# os.environ['GEMINI_API_KEY'] = config.GEMINI_API_KEY
 
 # Color coding thresholds - Retrieval
 MRR_GREEN = 0.9

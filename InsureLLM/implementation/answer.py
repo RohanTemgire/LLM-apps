@@ -6,9 +6,9 @@ from langchain_core.documents import Document
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 
-import config, os
+# import config, os
 
-os.environ['GOOGLE_API_KEY'] = config.GEMINI_API_KEY
+# os.environ['GOOGLE_API_KEY'] = config.GEMINI_API_KEY
 
 MODEL = "gemini-2.5-flash"
 DB_NAME = str(Path(__file__).parent.parent / "insurellm_db")

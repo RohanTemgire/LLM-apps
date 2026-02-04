@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 from collections import defaultdict
-import config, os
+# import config, os
 import time
 
 # Ensure this module exists in your folder structure or path
 from evaluations.eval import evaluate_all_retrieval, evaluate_all_answers
 
 # --- Configuration ---
-os.environ['GEMINI_API_KEY'] = config.GEMINI_API_KEY
+# os.environ['GEMINI_API_KEY'] = config.GEMINI_API_KEY
 
 # Set page layout to wide to match the dashboard feel
 st.set_page_config(page_title="RAG Evaluation Dashboard", layout="wide")

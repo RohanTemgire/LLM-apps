@@ -2,6 +2,8 @@
 
 This project demonstrates a robust Retrieval-Augmented Generation (RAG) workflow designed to integrate organizational data ("Insurellm") into a conversational AI. It showcases how to build, query, and rigorously evaluate a RAG system using Google's Gemini models and ChromaDB.
 
+App Deployed: https://insurelm-rag-chatbot.streamlit.app/
+
 ## 🚀 Key Features
 
 * **RAG Pipeline:** Implements a full retrieval workflow including query rewriting, embedding generation, vector search, and reranking.
