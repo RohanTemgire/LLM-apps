@@ -1,14 +1,27 @@
-langchain_google_genai
-langchain_chroma
-langchain_huggingface
-langchain_community
+# --- Web App ---
+streamlit==1.53.1
 
-plotly
-numpy
+# --- LLM & AI Providers ---
+google-generativeai==0.8.6
+google-genai==1.61.0
+litellm==1.81.7
 
-google-generativeai
-google-genai
+# --- LangChain Stack ---
+langchain-google-genai==4.2.0
+langchain-chroma==1.1.0
+langchain-community==0.4.1
+langchain-core==1.2.8
+langchain-huggingface==1.2.0
 
-sentence-transformers
-litellm
-tenacity
+# --- Vector Database ---
+chromadb==1.4.1
+
+# --- ML & Data ---
+sentence-transformers==5.2.2
+plotly==6.5.2
+numpy==2.4.2
+
+# --- Utilities ---
+tenacity==9.1.2
+pydantic==2.12.5
+python-dotenv==1.2.1
