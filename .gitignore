@@ -7,3 +7,6 @@ my_saved_models
 future_improvements.md
 insurellm_db
 __pycache__
+.env
+deep_neural_network.pth
+products_vectorstore

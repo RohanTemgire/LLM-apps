@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 import json
 import pickle
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 
 load_dotenv(override=True)
 groq = Groq(api_key=os.environ.get("GROQ_API_KEY"))

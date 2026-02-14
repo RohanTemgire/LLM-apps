@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from itertools import accumulate
 import math
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor
 
 GREEN = "\033[92m"
