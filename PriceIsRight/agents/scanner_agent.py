@@ -79,12 +79,19 @@ class ScannerAgent(Agent):
                 {"role": "system", "content": self.SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt},
             ],
+            response_format=DealSelection
         )
+        print("RAW RESPONSE:")
+        print(response)
 
         try:
-            raw_json = response.choices[0].message.content
-            data = json.loads(raw_json)
 
+            raw_json = response.choices[0].message.content
+            print("CONTENT:")
+            print(raw_json)
+            data = json.loads(raw_json)
+            print("Data: ")
+            print(data)
             selection = DealSelection(**data)
             selection.deals = [deal for deal in selection.deals if deal.price > 0]
 
