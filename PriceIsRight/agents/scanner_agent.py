@@ -66,25 +66,36 @@ class ScannerAgent(Agent):
         :return: a selection of good deals, or None if there aren't any
         """
         scraped = self.fetch_deals(memory)
-        if scraped:
-            user_prompt = self.make_user_prompt(scraped)
-            self.log("Scanner Agent is calling Gemini using Structured Outputs")
-            result = completion(
-                model=self.MODEL,
-                messages=[
-                    {"role": "system", "content": self.SYSTEM_PROMPT},
-                    {"role": "user", "content": user_prompt},
-                ],
-                response_format=DealSelection
-            )
-            result = result.choices[0].message.content
-            result = json.loads(result, object_hook=lambda d: SimpleNamespace(**d))
-            result.deals = [deal for deal in result.deals if deal.price > 0]
+        if not scraped:
+            return None
+
+        user_prompt = self.make_user_prompt(scraped)
+
+        self.log("Scanner Agent is calling Gemini using Structured Outputs")
+
+        response = completion(
+            model=self.MODEL,
+            messages=[
+                {"role": "system", "content": self.SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+
+        try:
+            raw_json = response.choices[0].message.content
+            data = json.loads(raw_json)
+
+            selection = DealSelection(**data)
+            selection.deals = [deal for deal in selection.deals if deal.price > 0]
+
             self.log(
-                f"Scanner Agent received {len(result.deals)} selected deals with price>0 from OpenAI"
+                f"Scanner Agent received {len(selection.deals)} selected deals with price>0"
             )
-            return result
-        return None
+
+            return selection
+        except Exception as e:
+            self.log(f"Scanner Agent JSON parsing failed: {e}")
+            return None
 
     def test_scan(self, memory: List[str] = []) -> Optional[DealSelection]:
         """

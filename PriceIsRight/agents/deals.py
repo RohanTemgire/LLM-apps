@@ -53,14 +53,29 @@ class ScrapedDeal:
         self.title = entry["title"]
         self.summary = extract(entry["summary"])
         self.url = entry["links"][0]["href"]
-        stuff = requests.get(self.url).content
-        soup = BeautifulSoup(stuff, "html.parser")
-        content = soup.find("div", class_="content-section").get_text()
-        content = content.replace("\nmore", "").replace("\n", " ")
-        if "Features" in content:
-            self.details, self.features = content.split("Features", 1)
-        else:
-            self.details = content
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        }
+        try:
+            response = requests.get(self.url, headers=headers, timeout=10)
+            response.raise_for_status()
+
+            soup = BeautifulSoup(response.content, "html.parser")
+            content_div = soup.find("div", class_="content-section")
+            if content_div:
+                content = content_div.get_text()
+                content = content.replace("\nmore", "").replace("\n", " ")
+
+                if "Features" in content:
+                    self.details, self.features = content.split("Features", 1)
+                else:
+                    self.details = content
+                    self.features = ""
+            else:
+                    self.details = ""
+                    self.features = ""
+        except Exception:
+            self.details = ""
             self.features = ""
         self.truncate()
 
