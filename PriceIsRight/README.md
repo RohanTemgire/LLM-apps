@@ -1,6 +1,8 @@
 # 💰 The Price is Right — Autonomous Deal-Hunting AI
 
-An **autonomous multi-agent framework** that continuously monitors online deal feeds, estimates true product values using an ensemble of AI models, and sends push notifications when it finds significant discounts.
+### An **autonomous multi-agent framework** that continuously monitors online deal feeds, estimates true product values using an ensemble of AI models, and sends push notifications when it finds significant discounts.
+
+### Check the deployment at -> https://priceisright.streamlit.app/
 
 ![alt text](src/image.png)
 ![alt text](src/image1.png)
